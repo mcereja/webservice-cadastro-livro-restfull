@@ -1,4 +1,4 @@
-package br.com.imaster7.socialbooks.service.exceptions;
+package mcereja.service.exceptions;
 
 public class AutorExistenteException extends RuntimeException {
 	private static final long serialVersionUID = 4084641674478355708L;

@@ -1,4 +1,4 @@
-package br.com.imaster7.socialbooks.service;
+package mcereja.service;
 
 import java.util.Date;
 import java.util.List;
@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import br.com.imaster7.socialbooks.domain.Comentario;
-import br.com.imaster7.socialbooks.domain.Livro;
-import br.com.imaster7.socialbooks.repository.Comentarios;
-import br.com.imaster7.socialbooks.repository.Livros;
-import br.com.imaster7.socialbooks.service.exceptions.LivroNaoEncontradoException;
+import mcereja.domain.Comentario;
+import mcereja.domain.Livro;
+import mcereja.repository.Comentarios;
+import mcereja.repository.Livros;
+import mcereja.service.exceptions.LivroNaoEncontradoException;
 
 @Service
 public class LivrosService {
@@ -28,7 +28,7 @@ public class LivrosService {
 	
 	public Livro buscar(Long id) {
 		Livro livro = null;
-		livro = livros.findOne(id);
+		livro = livros.findById(id).get();
 		
 		if ( livro == null ) {
 			throw new LivroNaoEncontradoException("Atenção !!! Livro não encontrado.");
@@ -44,7 +44,7 @@ public class LivrosService {
 	
 	public void remover(Long id) {
 		try {
-			livros.delete(id);
+			livros.deleteById(id);
 		} catch (EmptyResultDataAccessException e) {
 			throw new LivroNaoEncontradoException("Livro não encontrado para remoção.");
 		}

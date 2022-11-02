@@ -1,4 +1,4 @@
-package br.com.imaster7.socialbooks.domain;
+package mcereja.domain;
 
 public class DetalhesErro {
 

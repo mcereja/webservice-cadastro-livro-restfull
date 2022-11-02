@@ -1,4 +1,4 @@
-package br.com.imaster7.socialbooks.resources;
+package mcereja.resources;
 
 import java.net.URI;
 import java.util.List;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import br.com.imaster7.socialbooks.domain.Autor;
-import br.com.imaster7.socialbooks.service.AutoresService;
+import mcereja.domain.Autor;
+import mcereja.service.AutoresService;
 
 /*
  * Cap. 2.19 add bean validation @Valid nos metodos salvar p/ o spring fazer a validação na camada de resource

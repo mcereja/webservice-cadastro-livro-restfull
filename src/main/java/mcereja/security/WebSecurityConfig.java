@@ -1,4 +1,4 @@
-package br.com.imaster7.socialbooks.security;
+package mcereja.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
@@ -17,7 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("algaworks")
+		auth.inMemoryAuthentication().withUser("teste")
 		.password("s3nh4").roles("USER");
 	}
 	

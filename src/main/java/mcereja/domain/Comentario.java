@@ -1,4 +1,4 @@
-package br.com.imaster7.socialbooks.domain;
+package mcereja.domain;
 
 import java.util.Date;
 
@@ -8,9 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -29,7 +28,7 @@ public class Comentario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotEmpty(message = "Campo texto é obrigatório") 
+	@NotBlank(message = "Campo texto é obrigatório")
 	@Size(max = 512, message = "Texto do comentario náo pode ultrapassar 512 caracteres")
 	@JsonProperty("comentario") // Cap. 2.19 o atrib. texto agora é tratado como comentario sempre
 	private String texto;

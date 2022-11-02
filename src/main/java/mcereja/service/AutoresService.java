@@ -1,14 +1,14 @@
-package br.com.imaster7.socialbooks.service;
+package mcereja.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.imaster7.socialbooks.domain.Autor;
-import br.com.imaster7.socialbooks.repository.Autores;
-import br.com.imaster7.socialbooks.service.exceptions.AutorExistenteException;
-import br.com.imaster7.socialbooks.service.exceptions.AutorNaoEncontradoException;
+import mcereja.domain.Autor;
+import mcereja.repository.Autores;
+import mcereja.service.exceptions.AutorExistenteException;
+import mcereja.service.exceptions.AutorNaoEncontradoException;
 
 @Service
 public class AutoresService {
@@ -22,7 +22,7 @@ public class AutoresService {
 	
 	public Autor salvar(Autor autor) {
 		if ( autor.getId() != null ) {
-			if ( autores.findOne(autor.getId()) != null ) {
+			if ( autores.findById(autor.getId()) != null ) {
 				throw new AutorExistenteException("Autor já existe");
 			}
 		}
@@ -32,7 +32,7 @@ public class AutoresService {
 	}
 
 	public Autor buscar(Long id) {
-		Autor autor = autores.findOne(id);
+		Autor autor = autores.findById(id).get();
 		
 		if (autor == null) {
 			throw new AutorNaoEncontradoException("O autor não foi encontrado");

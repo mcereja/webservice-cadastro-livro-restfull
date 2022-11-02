@@ -1,4 +1,4 @@
-package br.com.imaster7.socialbooks.domain;
+package mcereja.domain;
 
 import java.util.Date;
 import java.util.List;
@@ -10,10 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -31,7 +30,7 @@ public class Livro {
 	@JsonInclude(Include.NON_NULL)
 	private Long id;
 	
-	@NotEmpty(message = "Nome do livro é obrigatório")
+	@NotBlank(message = "Nome do livro é obrigatório")
 	private String nome;
 	
 	@JsonInclude(Include.NON_NULL)
@@ -43,7 +42,7 @@ public class Livro {
 	private String editora;
 	
 	@JsonInclude(Include.NON_NULL)
-	@NotEmpty(message = "Resumo do livro é obrigatório")
+	@NotBlank(message = "Resumo do livro é obrigatório")
 	@Size(max = 512, message = "Resumo não deve ultrapassar 512 caracteres")
 	private String resumo;
 	

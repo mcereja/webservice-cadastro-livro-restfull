@@ -1,4 +1,4 @@
-package br.com.imaster7.socialbooks.handler;
+package mcereja.handler;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,10 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import br.com.imaster7.socialbooks.domain.DetalhesErro;
-import br.com.imaster7.socialbooks.service.exceptions.AutorExistenteException;
-import br.com.imaster7.socialbooks.service.exceptions.AutorNaoEncontradoException;
-import br.com.imaster7.socialbooks.service.exceptions.LivroNaoEncontradoException;
+import mcereja.domain.DetalhesErro;
+import mcereja.service.exceptions.AutorExistenteException;
+import mcereja.service.exceptions.AutorNaoEncontradoException;
+import mcereja.service.exceptions.LivroNaoEncontradoException;
 
 /*
  * Dessa forma o spring intercepta toda exception do tipo LivroNaoEncontradoException

@@ -1,4 +1,4 @@
-package br.com.imaster7.socialbooks.domain;
+package mcereja.domain;
 
 import java.util.Date;
 import java.util.List;
@@ -8,9 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -30,7 +29,7 @@ public class Autor {
 	
 	//obs. validação add cap. 2.19 var @Valid no salvar() camada resources
 	@JsonInclude(Include.NON_EMPTY)
-	@NotEmpty(message = "Nome do autor é obrigatório")
+	@NotBlank(message = "Nome do autor é obrigatório")
 	private String nome;
 	
 	@JsonInclude(Include.NON_NULL)
